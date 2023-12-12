@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Products</h1>
+    </div>
+  </div>
+  
+  <div class="row" id="productCards">
+    <!-- Cards will be dynamically added here -->
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="pagination" id="pagination">
+        <!-- Pagination links will be dynamically added here -->
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+.container {
+  margin-top: 20px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+
+
+
+
+
+
+// Sample product data
+const products = [
+  { name: 'Product 1', description: 'Description of Product 1' },
+  { name: 'Product 2', description: 'Description of Product 2' },
+  { name: 'Product 3', description: 'Description of Product 3' },
+  { name: 'Product 4', description: 'Description of Product 4' },
+  { name: 'Product 5', description: 'Description of Product 5' },
+  { name: 'Product 6', description: 'Description of Product 6' },
+];
+
+// Function to generate product cards
+function generateProductCards(pageNumber, pageSize) {
+  const startIndex = (pageNumber - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+  
+  const productCards = products.slice(startIndex, endIndex).map(product => `
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">${product.name}</h5>
+          <p class="card-text">${product.description}</p>
+        </div>
+      </div>
+    </div>
+  `);
+  
+  document.getElementById('productCards').innerHTML = productCards.join('');
+}
+
+// Function to generate pagination links
+function generatePaginationLinks(pageNumber, pageSize) {
+  const totalPages = Math.ceil(products.length / pageSize);
+  
+  const paginationLinks = Array.from({ length: totalPages }, (_, index) => `
+    <li class="page-item ${pageNumber === index + 1 ? 'active' : ''}">
+      <a class="page-link" href="#" onclick="changePage(${index + 1}, ${pageSize})">${index + 1}</a>
+    </li>
+  `);
+  
+  document.getElementById('pagination').innerHTML = `
+    <li class="page-item"><a class="page-link" href="#" onclick="changePage(${pageNumber - 1}, ${pageSize})">Previous</a></li>
+    ${paginationLinks.join('')}
+    <li class="page-item"><a class="page-link" href="#" onclick="changePage(${pageNumber + 1}, ${pageSize})">Next</a></li>
+  `;
+}
+
+// Function to handle page change
+function changePage(pageNumber, pageSize) {
+  generateProductCards(pageNumber, pageSize);
+  generatePaginationLinks(pageNumber, pageSize);
+}
+
+// Initial page load
+const initialPageSize = 3;
+changePage(1, initialPageSize);

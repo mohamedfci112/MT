@@ -1,0 +1,98 @@
+body{
+    font-family: montserrat;
+}
+.poster
+{
+    position: relative;
+    height:100vh;   
+    
+}
+.poster img
+{
+    width: 100%;
+    height: 100%;
+}
+.content-poster
+{
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.content-poster p
+{
+    text-align: center;
+    font-size: 15px;
+}
+.content-poster .btn
+{
+    border-radius: inherit;
+    font-size: 17px;
+    width: 155px;
+    height: 40px;
+}
+
+.section1
+{
+    margin-bottom: 60px;
+}
+.section1 img
+{
+    width:100%;
+}
+.section1 .txt
+{
+    display: inline-table;
+    position: relative;
+    margin-top: 13%;
+}
+
+.section2
+{
+    background-color: #F5F5F5;
+}
+.section2 img
+{
+    width:100%;
+}
+.section2 .txt
+{
+    display: inline-table;
+    position: relative;
+    margin-top: 11%;
+    padding: 50px;
+}
+
+.section3
+{
+    margin-top: 80px;
+}
+.section3 .txt
+{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.section3 .txt span
+{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.section3 .card img
+{
+    width: 100%;
+    height: 255px;
+}
+
+.section3 .card .content
+{
+    height: 200px;
+    height: 200px;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+}

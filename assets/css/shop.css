@@ -1,0 +1,153 @@
+body{
+  background-color: #F5F5F5;
+}
+
+.my-5{
+    margin-top: 100px!important;
+}
+.sidebar {
+    min-height: 600px;
+    border: 0px solid black;
+    padding: 0px 8px 0px 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar p {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.sidebar-title {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.area {
+    margin-bottom: 42px;
+}
+
+.area ul {
+    padding: 0;
+}
+
+.area ul li {
+    list-style: none;
+}
+
+
+.area ul li a {
+    text-decoration: none;
+    color: #898787;
+    display: block;
+}
+
+
+.sidebar-list li {
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+
+
+.sidebar-list li a span {
+    float: right;
+}
+
+
+/****************************************/
+.content{
+}
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,700&display=swap');
+
+/* Core Styles */
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content_page{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.card .content {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  color: white;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  width: 100%;
+  background-color: #0000008f;
+}
+.card:hover .content {
+  opacity: 1;
+}
+
+.card .content h3 {
+  margin: 0;
+  font-size: 28px;
+  margin: 0 0 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: black;
+}
+
+.card .image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+}
+
+.card .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.card:hover .image {
+  transform: scale(1.9);
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.card .overlay img {
+  width: 100%;
+  height: auto;
+}
+
