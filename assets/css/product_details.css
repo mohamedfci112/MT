@@ -1,12 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+    @font-face {
+        font-family: 'Luxea';
+        src: url('./fonts/LuxeaTypeface-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+    
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-    }
-    html {
-        font-family: 'Lato', sans-serif;
-        font-size: 16px;
+        font-family: 'Luxea';
     }
     
     p {
@@ -43,7 +48,7 @@
     }
     #product {
         margin: 0 auto;
-        margin-top: 100px;
+        margin-top: 78px;
     }
     .product_images {
         padding:0;
@@ -138,6 +143,7 @@
         align-items: center;
         margin-bottom: 40px;
         margin-left: -8px;
+        margin-top: 10px;
     }
     .back a {
         font-size: 13px;
@@ -196,3 +202,45 @@
         height: 100%;
         object-fit: cover;
       }
+      
+      .similar
+      {
+        margin-top: 5%;
+      }
+      .similar a{
+        color: #111111;
+      }
+      .similar .product_similar
+      {
+        height: 500px;
+      }
+      .similar .product_similar img
+      {
+        height: 100%;
+        border: 1px solid;
+      }
+      
+      .similar .product_similar .content
+      {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+        font-weight: 700;
+        background: #dfdcdc30;
+        visibility: hidden;
+        transition: .3s ease-in;
+      }
+      .similar .product_similar:hover .content
+      {
+        visibility: visible;
+      }
+      h4 {
+        color: #555555;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-decoration: underline;
+        padding: 10px;
+    }

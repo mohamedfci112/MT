@@ -13,7 +13,7 @@ require_once('header.php');
             <div class="row py-5">
                 <div class="col-lg-6">
                 <p class="lead mb-5">There is nothing more rare, nor more beautiful, than a woman being unapologetically herself; comfortable in her perfect imperfection. To me, that is the true essence of beauty.  </p>
-                <a href="#" class="btn btn-lg btn-light mx-1">Discover Now</a> 
+                <a href="shop.php" class="btn btn-lg btn-light mx-1">Discover Now</a> 
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@ require_once('header.php');
                 <img src="./assets/img/sec1.jpg" alt="" srcset="">
             </div>
             <div class="col-md-6 txt">
-                <h6>FOI</h6>
+                <h5><b>FOI</b></h5>
                 <p>
                 Our Foi collection for summer 2022 is a celebration of feminine strength and
                 courage. We designed bold looks with bright colors, puffed sleeves, ruffles, and
@@ -59,7 +59,7 @@ require_once('header.php');
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 txt">
-                <h6>UNIFIED</h6>
+                <h5><b>UNIFIED</b></h5>
                 <p>
                 The collection is inspired by the idea of empowerment and self-expression for
                 women. It features bold colors, and shapes that reflect the diversity and

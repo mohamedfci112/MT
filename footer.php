@@ -27,18 +27,16 @@
               <h4 class="c-nav-tool_title">Menu</h4>
               <ul class="c-nav-tool_list">
                 <li>
-                  <a href="/collections/all" class="c-link">Shop All</a>
-                </li>
-
-                <li>
-                  <a href="/pages/about-us" class="c-link">About Us</a>
-                </li>
-
-                <li>
-                  <a href="/blogs/community" class="c-link">Community</a>
+                  <a href="shop.php" class="c-link">Shop All</a>
                 </li>
                 <li>
-                  <a href="#" class="c-link">Lookbook</a>
+                  <a href="lookbook.php" class="c-link">Lookbook</a>
+                </li>
+                <li>
+                  <a href="story.php" class="c-link">Our Story</a>
+                </li>
+                <li>
+                  <a href="book.php" class="c-link">Book Appointment</a>
                 </li>
               </ul>
             </nav>
@@ -51,29 +49,23 @@
               <ul class="c-nav-tool_list">
 
                 <li class="c-nav-tool_item">
-                  <a href="/pages/shipping-returns" class="c-link">Shipping &amp; Returns</a>
+                  <a href="shipping-returns.php" class="c-link">Shipping &amp; Returns</a>
                 </li>
 
                 <li class="c-nav-tool_item">
-                  <a href="/pages/help" class="c-link">Help &amp; FAQ</a>
+                  <a href="help.php" class="c-link">Help &amp; FAQ</a>
                 </li>
 
                 <li class="c-nav-tool_item">
-                  <a href="/pages/terms-conditions" class="c-link">Terms &amp; Conditions</a>
+                  <a href="terms-conditions.php" class="c-link">Terms &amp; Conditions</a>
                 </li>
 
                 <li class="c-nav-tool_item">
-                  <a href="/pages/privacy-policy" class="c-link">Privacy Policy</a>
+                  <a href="privacy-policy.php" class="c-link">Privacy Policy</a>
                 </li>
 
                 <li class="c-nav-tool_item">
-                  <a href="/pages/contact" class="c-link">Contact</a>
-                </li>
-
-                <li class="c-nav-tool_item">
-                  <a href="/account/login" class="c-link">
-                    Login
-                  </a>
+                  <a href="contact.php" class="c-link">Contact</a>
                 </li>
               </ul>
             </nav>
@@ -99,18 +91,6 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
                   <path fill="none" d="M0 0h24v24H0z" />
                   <path d="M15 17a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15zM2 2h4v20H2V2z" />
-                </svg>
-              </li>
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
-                  <path fill="none" d="M0 0h24v24H0z" />
-                  <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-6v2h2v-2h1a2.5 2.5 0 0 0 2-4 2.5 2.5 0 0 0-2-4h-1V6h-2v2H8v8h3zm-1-3h4a.5.5 0 1 1 0 1h-4v-1zm0-3h4a.5.5 0 1 1 0 1h-4v-1z" />
-                </svg>
-              </li>
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
-                  <path fill="none" d="M0 0h24v24H0z" />
-                  <path d="M20.067 8.478c.492.88.556 2.014.3 3.327-.74 3.806-3.276 5.12-6.514 5.12h-.5a.805.805 0 0 0-.794.68l-.04.22-.63 3.993-.032.17a.804.804 0 0 1-.794.679H7.72a.483.483 0 0 1-.477-.558L7.418 21h1.518l.95-6.02h1.385c4.678 0 7.75-2.203 8.796-6.502zm-2.96-5.09c.762.868.983 1.81.752 3.285-.019.123-.04.24-.062.36-.735 3.773-3.089 5.446-6.956 5.446H8.957c-.63 0-1.174.414-1.354 1.002l-.014-.002-.93 5.894H3.121a.051.051 0 0 1-.05-.06l2.598-16.51A.95.95 0 0 1 6.607 2h5.976c2.183 0 3.716.469 4.523 1.388z" />
                 </svg>
               </li>
             </ul>
@@ -147,7 +127,7 @@
     </div>
     <hr>
     <div class="footer_copyright">
-      <p>&copy; 2023. All rights reserved.</p>
+      <p>MARIAM ALBOSSERY &copy; 2023. All rights reserved.</p>
     </div>
   </div>
 </footer>

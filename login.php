@@ -8,13 +8,13 @@ require_once('header.php');
     <div class="user_options-text">
       <div class="user_options-unregistered">
         <h2 class="user_unregistered-title">Don't have an account?</h2>
-        <p class="user_unregistered-text">Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap.</p>
+        <p class="user_unregistered-text">Step into style and elegance with our fashion platform.</p>
         <button class="user_unregistered-signup" id="signup-button">Sign up</button>
       </div>
 
       <div class="user_options-registered">
         <h2 class="user_registered-title">Have an account?</h2>
-        <p class="user_registered-text">Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap.</p>
+        <p class="user_registered-text">Make a bold statement in the world of fashion and let your unique style take center stage with us.</p>
         <button class="user_registered-login" id="login-button">Login</button>
       </div>
     </div>

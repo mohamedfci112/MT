@@ -61,10 +61,18 @@
 <i class="fa fa-shopping-bag" style="font-size:22px;">
 </i>
 <?php
+include_once("admin/backend/db.php");
 session_start();
+$user_email = $_SESSION['user_email'];
 
-if(!empty($_SESSION["shopping_cart"])) {
-  $cart_count = count(array_keys($_SESSION["shopping_cart"]));
+$getQuery = "SELECT id FROM cart where `uid`='$user_email' and `status`=0";  
+
+$result = mysqli_query($con, $getQuery);
+$row_cnt = $result->num_rows;
+?>
+<?php
+if($row_cnt != 0) {
+  $cart_count = $row_cnt;
 ?>
 <sup class="cart_count" style="color:red;background: #d7d2d2;
     padding: 2px 7px;
@@ -75,7 +83,7 @@ if(!empty($_SESSION["shopping_cart"])) {
 <span class="d-lg-none ml-3">Cart</span>
 </a> </li>
 
-<li class="nav-item"> <a class="nav-link" href="#">
+<li class="nav-item"> <a class="nav-link" href="wishlist.php">
 <i class="fa-regular fa-heart" style="font-size:22px;"></i><span class="d-lg-none ml-3">Wishlist</span>
 </a> </li>
 <!--

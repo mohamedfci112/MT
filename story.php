@@ -15,11 +15,10 @@ require_once('header.php');
         margin-bottom: 60px;
     }
     .story p{
-        line-height: 2.4;
-        font-weight: 600;
-        font-family: Calibri;
-        font-size: 17px;
+        line-height: 2.2;
+        font-size: 18px;
         word-spacing: 1px;
+        text-align: justify;
     }
     img{
         width:100%;

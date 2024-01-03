@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Luxea';
+  src: url('./fonts/LuxeaTypeface-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 body{
   background-color: #F5F5F5;
 }
@@ -9,11 +17,11 @@ body{
     min-height: 600px;
     border: 0px solid black;
     padding: 0px 8px 0px 8px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Luxea';
 }
 
 .sidebar p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Luxea', sans-serif;
 }
 
 

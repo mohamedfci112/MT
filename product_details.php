@@ -22,12 +22,19 @@ $result = mysqli_query($con, $getQuery);
     <div class="product_images col-md-7">
         <!-- Slider main container -->
         <swiper-container class="mySwiper" navigation="true" effect="fade" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+            <?php if($row['image1'] != ''){ ?>
             <swiper-slide><img src="./shopImages/<?php echo $row['id'] ?>/<?php echo $row['image1'] ?>" alt="" /></swiper-slide>
+            <?php } if($row['image2'] != ''){ ?>
             <swiper-slide><img src="./shopImages/<?php echo $row['id'] ?>/<?php echo $row['image2'] ?>" alt="" /></swiper-slide>
+            <?php } if($row['image3'] != ''){ ?>
             <swiper-slide><img src="./shopImages/<?php echo $row['id'] ?>/<?php echo $row['image3'] ?>" alt="" /></swiper-slide>
+            <?php } if($row['image4'] != ''){ ?>
             <swiper-slide><img src="./shopImages/<?php echo $row['id'] ?>/<?php echo $row['image4'] ?>" alt="" /></swiper-slide>
+            <?php } if($row['image5'] != ''){ ?>
             <swiper-slide><img src="./shopImages/<?php echo $row['id'] ?>/<?php echo $row['image5'] ?>" alt="" /></swiper-slide>
+            <?php } if($row['image6'] != ''){ ?>
             <swiper-slide><img src="./shopImages/<?php echo $row['id'] ?>/<?php echo $row['image6'] ?>" alt="" /></swiper-slide>
+            <?php } ?>
         </swiper-container>
     </div>
 
@@ -71,8 +78,41 @@ $result = mysqli_query($con, $getQuery);
         </div>
     </div>
     <?php
+    $catid=$row['category_id'];
+    $getQuery1 = "SELECT * FROM shop where category_id = '$catid' and id <>'$id' Limit 4";  
+
+    $result1 = mysqli_query($con, $getQuery1);
     }
     ?>
+</div>
+
+<div class="similar container-fluid">
+    <h4>Similar products</h4>
+    <div class="row">
+        <?php
+        //display the retrieved result on the webpage
+        while ($row1 = mysqli_fetch_array($result1)) {
+        ?>
+        <div class="col-md-3">
+            <a href="product_details.php?id=<?php echo $row1['id'] ?>">
+                <div class="product_similar">
+                    <img src="./shopImages/<?php echo $row1['id'] ?>/<?php echo $row1['image1'] ?>" alt="">
+                    <div class="content">
+                        <div class="left">
+                            <span class="product_title"><?php echo $row1['item_name'] ?></span>
+                        </div>
+                        
+                        <div class="right">
+                            <span class="product_price"><?php echo $row1['item_price'] ?> EGP</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <?php
+        }
+        ?>
+    </div>
 </div>
 
 

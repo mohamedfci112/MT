@@ -11,59 +11,58 @@ $response = array(
     'cartCount' => 0
 ); 
 
-if ($_POST['product_id']!="" && $_POST['quantity']!="")
+if($_SESSION['logged'] == '')
 {
-    $product_id = $_POST['product_id'];
-    $quantity = $_POST['quantity'];
+    // Return response
+    $response['status'] = 2; 
+    $response['message'] = 'Not Authorized.!';
+}
 
-    $result = mysqli_query($con, "SELECT * FROM `shop` WHERE `id`='$product_id' and `item_quantity`>='$quantity'");
-    $row = mysqli_fetch_assoc($result);
-    $item_name = $row['item_name'];
-    $item_code = $row['item_code'];
-    $product_id = $row['id'];
-    $item_price = $row['item_price'];
-    $image1 = $row['image1'];
-
-    $cartArray = array(
-        $product_id=>array(
-        'item_name'=>$item_name,
-        'item_code'=>$item_code,
-        'product_id'=>$product_id,
-        'item_price'=>$item_price,
-        'quantity'=>$quantity,
-        'image1'=>$image1)
-    );
-
-    if(empty($_SESSION["shopping_cart"]))
+else
+{
+    if ($_POST['product_id']!="" && $_POST['quantity']!="")
     {
-        $_SESSION["shopping_cart"] = $cartArray;
-        $cart_count = count(array_keys($_SESSION["shopping_cart"]));
-        $response['cartCount'] = $cart_count;
-        $response['status'] = 1; 
-        $response['message'] = 'Product is added to your cart!';
-    }
-    else
-    {
-        $array_keys = array_keys($_SESSION["shopping_cart"]);
-        if(in_array($product_id,$array_keys))
+        $product_id = $_POST['product_id'];
+        $quantity = $_POST['quantity'];
+
+        $result = mysqli_query($con, "SELECT * FROM `shop` WHERE `id`='$product_id' and `item_quantity`>='$quantity'");
+        $row_cnt = $result->num_rows;
+        if($row_cnt == 0)
         {
-            $cart_count = count(array_keys($_SESSION["shopping_cart"]));
-            $response['cartCount'] = $cart_count;
-            $response['status'] = 2; 
-            $response['message'] = 'Product is already added to your cart!';
+            $response['message'] = 'Sorry, this product is not available in our stock now!';
         }
         else
         {
-            $_SESSION["shopping_cart"] = array_merge($_SESSION["shopping_cart"], $cartArray);
-            $cart_count = count(array_keys($_SESSION["shopping_cart"]));
-            $response['cartCount'] = $cart_count;
-            $response['status'] = 1; 
-            $response['message'] = 'Product is added to your cart!';
-        }
-    }
-}
+            $uid = $_SESSION['user_email'];
 
-    // Return response 
-    echo json_encode($response);
+            $sql = "SELECT * FROM `cart` WHERE `pid`='$product_id' and `uid`='$uid' and `status`=0";
+
+            $resultset = mysqli_query($con, $sql) or die("database error:". mysqli_error($con));
+            $row_cnt1 = $resultset->num_rows;
+            if($row_cnt1 != 0)
+            {
+                $response['message'] = 'This product is already added in your cart!';
+            }
+            else
+            {
+                // Insert form data in the database 
+                $sqlQ = "INSERT INTO cart (`pid`,`uid`,`quantity`) VALUES (?,?,?)"; 
+                $stmt = $con->prepare($sqlQ); 
+                $stmt->bind_param("sss", $product_id, $uid, $quantity);
+                $insert = $stmt->execute(); 
+                if($insert)
+                {
+                    $response['status'] = 1; 
+                    $response['message'] = 'Added successfully!';
+                }
+                //
+            }
+        }
+
+    }
+
+}
+// Return response 
+echo json_encode($response);
 
 ?>

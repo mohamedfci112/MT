@@ -235,7 +235,7 @@ $colresult = mysqli_query($con, $getCollection);
                     
                     <div class="content">
                         
-                        <h3><a href="product_details.php?id=<?php echo $row['id'] ?>" style="color:#93784d;-webkit-text-fill-color: white;-webkit-text-stroke-width: 2px;-webkit-text-stroke-color: #93784d;"><?php echo $row['item_name'] ?></a></h3>
+                        <h3><a href="product_details.php?id=<?php echo $row['id'] ?>" style="color:#93784d;-webkit-text-fill-color: white;-webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #93784d;"><?php echo $row['item_name'] ?></a></h3>
                         <span style="color:white;"><b>Price: </b><span><?php echo $row['item_price'] ?> EGP</span></span>
                     </div>
                     <div class="image">

@@ -1,11 +1,18 @@
-body{
-    font-family: montserrat;
+@font-face {
+    font-family: 'Luxea';
+    src: url('./fonts/LuxeaTypeface-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*{
+    font-family: 'Luxea';
 }
 .poster
 {
     position: relative;
     height:100vh;   
-    
 }
 .poster img
 {
@@ -25,7 +32,7 @@ body{
 .content-poster p
 {
     text-align: center;
-    font-size: 15px;
+    font-size: 25px;
 }
 .content-poster .btn
 {
@@ -47,7 +54,12 @@ body{
 {
     display: inline-table;
     position: relative;
-    margin-top: 13%;
+    margin-top: 4%;
+    padding: 50px;
+}
+.section1 .txt p,
+.section2 .txt p{
+    font-size: 19px;
 }
 
 .section2
@@ -62,7 +74,7 @@ body{
 {
     display: inline-table;
     position: relative;
-    margin-top: 11%;
+    margin-top: 8%;
     padding: 50px;
 }
 
